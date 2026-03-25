@@ -45,8 +45,8 @@ CREATE TABLE vsklad.nomenclature_tags(
 
 CREATE TABLE vsklad.dynamic(
     nomenclature_id INT REFERENCES vsklad.nomenclature(id) ON DELETE CASCADE PRIMARY KEY,
-    price NUMERIC(10, 2),
-    quantity_total INT,
-    quantity_reserved INT,
+    price NUMERIC(10, 2) NOT NULL DEFAULT 0.00,
+    quantity_total INT NOT NULL DEFAULT 0,
+    quantity_reserved INT NOT NULL DEFAULT 0,
     tax NUMERIC(1, 3)
 );
